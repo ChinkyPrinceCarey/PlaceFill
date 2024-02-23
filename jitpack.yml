@@ -1,0 +1,8 @@
+# configuration file for building snapshots and releases with jitpack.io
+jdk:
+  - openjdk17
+before_install:
+  - ./scripts/prepareJitpackEnvironment.sh
+install:
+  - FILE="-Dfile=dist/PlaceFill-release-0.1.aar"
+  - mvn install:install-file $FILE -DgroupId=com.github.ChinkyPrinceCarey -DartifactId=PlaceFill -Dversion=0.1 -Dpackaging=aar -DgeneratePom=true
