@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="blue">#4285F4</color>
+    <color name="blue_400">#4184F3</color>
+    <color name="orange">#F44336</color>
+    <color name="separator">#1F000000</color>
+    <color name="quantum_grey600">#757575</color>
+    <color name="quantum_grey700">#616161</color>
+    <color name="quantum_grey900">#212121</color>
+</resources>
