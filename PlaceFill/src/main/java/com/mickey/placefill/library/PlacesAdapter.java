@@ -7,6 +7,7 @@ import android.text.style.StyleSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -24,9 +25,13 @@ public class PlacesAdapter extends RecyclerView.Adapter<PlacesAdapter.ViewHolder
     CharacterStyle primaryTextStyle = new StyleSpan(Typeface.NORMAL);
     CharacterStyle secondaryTextStyle = new StyleSpan(Typeface.NORMAL);
 
+    PredictionsIcon predictionsIcon;
+
     public PlacesAdapter(Context context, List<AutocompletePrediction> predictionList) {
         this.mInflater = LayoutInflater.from(context);
         this.mData = predictionList;
+
+        predictionsIcon = new PredictionsIcon(context);
     }
 
     public void setPrimaryTextStyle(int characterStyle) {
@@ -47,7 +52,9 @@ public class PlacesAdapter extends RecyclerView.Adapter<PlacesAdapter.ViewHolder
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         AutocompletePrediction prediction = mData.get(position);
+        List<String> types = prediction.getTypes();
 
+        holder.prediction_icon.setImageDrawable(predictionsIcon.getPredictionIcon(types.get(0)));
         holder.primary_text_tv.setText(prediction.getPrimaryText(primaryTextStyle));
         holder.secondary_text_tv.setText(prediction.getSecondaryText(secondaryTextStyle));
     }
@@ -62,6 +69,7 @@ public class PlacesAdapter extends RecyclerView.Adapter<PlacesAdapter.ViewHolder
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+        ImageView prediction_icon;
         TextView primary_text_tv, secondary_text_tv;
 
         ViewHolder(View itemView) {
@@ -69,6 +77,7 @@ public class PlacesAdapter extends RecyclerView.Adapter<PlacesAdapter.ViewHolder
 
             itemView.setOnClickListener(this);
 
+            prediction_icon = itemView.findViewById(R.id.places_autocomplete_prediction_icon);
             primary_text_tv = itemView.findViewById(R.id.places_autocomplete_prediction_primary_text);
             secondary_text_tv = itemView.findViewById(R.id.places_autocomplete_prediction_secondary_text);
         }
