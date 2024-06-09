@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.github.ChinkyPrinceCarey</groupId>
   <artifactId>PlaceFill</artifactId>
-  <version>0.1</version>
+  <version>0.2</version>
   <packaging>pom</packaging>
   <description>PlaceFill is an advanced Android library that enhances the functionality of Google's Place Autocomplete by introducing features that were previously unavailable.</description>
 </project>
