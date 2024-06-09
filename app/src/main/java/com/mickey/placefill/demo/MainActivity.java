@@ -79,6 +79,8 @@ public class MainActivity extends AppCompatActivity {
 
         placeFill
                 .setApiKey(PLACES_API_KEY)
+                .shouldEnableYourLocation(true)
+                //.setYourLocationPrimaryColor(R.color.black)
                 .setPrimaryTextStyle(Typeface.BOLD)
                 .setSecondaryTextStyle(Typeface.NORMAL)
                 .setOrigin(new LatLng(-33.8749937, 151.2041382))

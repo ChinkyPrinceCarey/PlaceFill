@@ -3,12 +3,14 @@ package com.mickey.placefill.library;
 import static com.mickey.placefill.library.Constants.PRE_INTENT_KEY_API_KEY;
 import static com.mickey.placefill.library.Constants.PRE_INTENT_KEY_COUNTRIES;
 import static com.mickey.placefill.library.Constants.PRE_INTENT_KEY_FIELDS_LIST;
+import static com.mickey.placefill.library.Constants.PRE_INTENT_KEY_IS_ENABLE_YOUR_LOCATION;
 import static com.mickey.placefill.library.Constants.PRE_INTENT_KEY_ORIGIN_LAT;
 import static com.mickey.placefill.library.Constants.PRE_INTENT_KEY_ORIGIN_LONG;
 import static com.mickey.placefill.library.Constants.PRE_INTENT_KEY_PRIMARY_TEXT_STYLE;
 import static com.mickey.placefill.library.Constants.PRE_INTENT_KEY_REQUEST_CODE;
 import static com.mickey.placefill.library.Constants.PRE_INTENT_KEY_SECONDARY_TEXT_STYLE;
 import static com.mickey.placefill.library.Constants.PRE_INTENT_KEY_SHOULD_DEBUG;
+import static com.mickey.placefill.library.Constants.PRE_INTENT_KEY_YOUR_LOCATION_PRIMARY_COLOR;
 
 import android.content.Context;
 import android.content.Intent;
@@ -56,6 +58,16 @@ public class PlaceFill {
 
     public PlaceFill setSecondaryTextStyle(int textStyle) {
         intent.putExtra(PRE_INTENT_KEY_SECONDARY_TEXT_STYLE, textStyle);
+        return this;
+    }
+
+    public PlaceFill shouldEnableYourLocation(boolean shouldEnable) {
+        intent.putExtra(PRE_INTENT_KEY_IS_ENABLE_YOUR_LOCATION, shouldEnable);
+        return this;
+    }
+
+    public PlaceFill setYourLocationPrimaryColor(int primaryColor) {
+        intent.putExtra(PRE_INTENT_KEY_YOUR_LOCATION_PRIMARY_COLOR, primaryColor);
         return this;
     }
 
